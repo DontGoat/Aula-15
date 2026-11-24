@@ -1,0 +1,214 @@
+/*
+Descricao: Exercícios da Aula 15 - JavaScript aplicado a Formulários
+nome_arquivo: main.css
+nome_exercicio: Atividade 15 - JavaScript aplicado a Formulários
+nome_aluno: Pedro Henrique de Sousa Martins
+email_aluno: pedro.martins55@aluno.cps.sp.gov.br
+turma: A1129-N-D.S.M.-312-20262
+*/
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3eef8;
+    color: #333333;
+}
+
+header {
+    background-color: #5b21b6;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 30px 20px;
+}
+
+.caixa {
+    width: 340px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    border: 2px solid #5b21b6;
+}
+
+.caixa h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #5b21b6;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+label.inline {
+    display: inline;
+    font-weight: normal;
+}
+
+label.negrito {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #999999;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #5b21b6;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7c3aed;
+}
+
+button:disabled {
+    background-color: #b0a8c0;
+    cursor: not-allowed;
+}
+
+.contador {
+    margin: 5px 0 0 0;
+    text-align: right;
+}
+
+.total {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.resultado {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 4px;
+    white-space: pre-wrap;
+}
+
+.resultado:empty {
+    display: none;
+}
+
+.linha {
+    display: flex;
+    gap: 8px;
+}
+
+.linha button {
+    width: 50px;
+    margin-top: 0;
+}
+
+.lista-tags {
+    margin-top: 10px;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #ede9fe;
+    color: #5b21b6;
+    padding: 5px 10px;
+    margin: 5px 5px 0 0;
+    border-radius: 15px;
+}
+
+.tag button {
+    width: auto;
+    margin: 0 0 0 6px;
+    padding: 0 6px;
+    font-size: 12px;
+    border-radius: 50%;
+}
+
+.lista {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.lista li {
+    margin-bottom: 6px;
+}
+
+.mensagem {
+    margin: 10px 0 0 0;
+    font-weight: bold;
+}
+
+.erro {
+    color: #c62828;
+}
+
+.sucesso {
+    color: #2e7d32;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #666666;
+}
+
+body.dark-theme {
+    background-color: #121212;
+    color: #eeeeee;
+}
+
+.dark-theme .caixa {
+    background-color: #1e1e1e;
+    border-color: #a78bfa;
+}
+
+.dark-theme .caixa h2 {
+    color: #a78bfa;
+}
+
+.dark-theme input,
+.dark-theme select,
+.dark-theme textarea {
+    background-color: #2a2a2a;
+    color: #eeeeee;
+    border-color: #555555;
+}
+
+.dark-theme .resultado {
+    background-color: #2a2a2a;
+}
+
+.dark-theme footer {
+    color: #aaaaaa;
+}
