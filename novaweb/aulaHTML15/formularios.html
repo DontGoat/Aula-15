@@ -1,0 +1,198 @@
+<!--
+Descricao: Exercícios da Aula 15 - JavaScript aplicado a Formulários
+nome_arquivo: formularios.html
+nome_exercicio: Atividade 15 - JavaScript aplicado a Formulários
+nome_aluno: Pedro Henrique de Sousa Martins
+email_aluno: pedro.martins55@aluno.cps.sp.gov.br
+turma: A1129-N-D.S.M.-312-20262
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários com JavaScript</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <header>
+        <h1>JavaScript aplicado a Formulários</h1>
+        <p>Aula 15 - Desafios</p>
+    </header>
+
+    <main>
+        <form id="formComentario" class="caixa">
+            <h2>1. Comentário</h2>
+
+            <label for="comentario">Comentário</label>
+            <textarea id="comentario" name="comentario" rows="4" maxlength="140" placeholder="Escreva seu comentário..."></textarea>
+            <p id="contador" class="contador">140</p>
+
+            <p id="msgComentario" class="mensagem"></p>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <form id="formSenha" class="caixa">
+            <h2>2. Confirmar Senha</h2>
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="Mínimo 6 caracteres">
+
+            <label for="confirmarSenha">Confirme sua Senha</label>
+            <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Repita a senha">
+
+            <p id="msgSenha" class="mensagem"></p>
+
+            <button type="submit" id="btnCadastrar" disabled>Cadastrar</button>
+        </form>
+
+        <form id="formPedido" class="caixa">
+            <h2>3. Pedido</h2>
+
+            <label for="produto">Produto</label>
+            <select id="produto" name="produto">
+                <option value="0">Selecione um produto</option>
+                <option value="100">Teclado - R$ 100,00</option>
+                <option value="50">Mouse - R$ 50,00</option>
+                <option value="800">Monitor - R$ 800,00</option>
+            </select>
+
+            <label for="quantidade">Quantidade</label>
+            <input type="number" id="quantidade" name="quantidade" min="1" value="1">
+
+            <p id="totalPedido" class="total">Total: R$ 0,00</p>
+
+            <p id="msgPedido" class="mensagem"></p>
+
+            <button type="submit">Fazer pedido</button>
+        </form>
+
+        <form id="formProduto" class="caixa">
+            <h2>4. Cadastro de Produto</h2>
+
+            <label for="nomeProduto">Nome</label>
+            <input type="text" id="nomeProduto" name="nomeProduto" placeholder="Nome do produto">
+
+            <label for="categoria">Categoria</label>
+            <select id="categoria" name="categoria">
+                <option value="">Selecione uma categoria</option>
+                <option value="Informática">Informática</option>
+                <option value="Alimentos">Alimentos</option>
+                <option value="Limpeza">Limpeza</option>
+            </select>
+
+            <label for="preco">Preço</label>
+            <input type="number" id="preco" name="preco" min="0" step="0.01" placeholder="0,00">
+
+            <p id="msgProduto" class="mensagem"></p>
+
+            <button type="submit">Gerar JSON</button>
+
+            <pre id="resultadoJson" class="resultado"></pre>
+        </form>
+
+        <form id="formTelefone" class="caixa">
+            <h2>5. Telefone</h2>
+
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone" name="telefone" maxlength="15" placeholder="(XX) XXXXX-XXXX">
+
+            <p id="msgTelefone" class="mensagem"></p>
+
+            <button type="submit">Salvar</button>
+        </form>
+
+        <form id="formDepartamento" class="caixa">
+            <h2>6. Departamento</h2>
+
+            <label for="departamento">Departamento</label>
+            <select id="departamento" name="departamento">
+                <option value="">Selecione um departamento</option>
+                <option value="ti">TI</option>
+                <option value="rh">RH</option>
+            </select>
+
+            <label for="funcionario">Funcionário</label>
+            <select id="funcionario" name="funcionario">
+                <option value="">Escolha um departamento primeiro</option>
+            </select>
+
+            <p id="msgDepartamento" class="mensagem"></p>
+
+            <button type="submit">Confirmar</button>
+        </form>
+
+        <form id="formHabilidades" class="caixa">
+            <h2>7. Habilidades</h2>
+
+            <label for="habilidade">Habilidades</label>
+            <div class="linha">
+                <input type="text" id="habilidade" name="habilidade" placeholder="Ex: HTML">
+                <button type="submit">+</button>
+            </div>
+
+            <div id="listaHabilidades" class="lista-tags"></div>
+        </form>
+
+        <form id="formIdade" class="caixa">
+            <h2>8. Data de Nascimento</h2>
+
+            <label for="nascimento">Data de nascimento</label>
+            <input type="date" id="nascimento" name="nascimento">
+
+            <p id="msgIdade" class="mensagem"></p>
+
+            <button type="submit" id="btnFinalizar" disabled>Finalizar Cadastro</button>
+        </form>
+
+        <form id="formLista" class="caixa">
+            <h2>9. Lista de Compras</h2>
+
+            <input type="checkbox" id="selecionarTodos">
+            <label for="selecionarTodos" class="inline negrito">Selecionar Todos</label>
+
+            <ul class="lista">
+                <li>
+                    <input type="checkbox" id="arroz" class="item" value="Arroz">
+                    <label for="arroz" class="inline">Arroz</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="feijao" class="item" value="Feijão">
+                    <label for="feijao" class="inline">Feijão</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="leite" class="item" value="Leite">
+                    <label for="leite" class="inline">Leite</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="pao" class="item" value="Pão">
+                    <label for="pao" class="inline">Pão</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="ovos" class="item" value="Ovos">
+                    <label for="ovos" class="inline">Ovos</label>
+                </li>
+            </ul>
+
+            <p id="msgLista" class="mensagem"></p>
+
+            <button type="submit">Confirmar itens</button>
+        </form>
+
+        <form id="formPerfil" class="caixa">
+            <h2>10. Configurações de Perfil</h2>
+
+            <input type="checkbox" id="temaEscuro" name="temaEscuro">
+            <label for="temaEscuro" class="inline">Ativar tema escuro</label>
+        </form>
+    </main>
+
+    <footer>
+        <p>Pedro Henrique de Sousa Martins - DSM</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
